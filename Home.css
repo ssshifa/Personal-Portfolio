@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F4F0EB;
+    overflow-x:hidden;
+    color:#333;
+}
+
+/* NAVBAR  */
+
+nav{
+    padding:25px 5%;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav li{
+    white-space:nowrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-size:.95rem;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#4a9b6b;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:3px;
+    background:#4a9b6b;
+    border-radius:3px;
+    transition:.3s;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    width:100%;
+}
+
+/*  MAIN  */
+
+.main{
+    width:80%;
+    margin:auto;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.main-text{
+    max-width:500px;
+}
+
+.main-text h1{
+    font-size:2.4rem;
+    margin-bottom:15px;
+}
+
+.main-text span{
+
+    background: linear-gradient(
+        90deg,
+        #377d53,
+        #7bbf91,
+        #555,
+        #4a9b6b
+    );
+
+    background-size:300% 300%;
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    animation:textShift 3s ease-in-out infinite;
+}
+
+.main-text p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/*  BUTTON  */
+
+.cv-btn{
+    border:none;
+    background:#4a9b6b;
+    color:white;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    margin-bottom:30px;
+}
+
+.cv-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(74,155,107,.3);
+
+}
+
+/* CONNECT */
+
+.connect{
+
+    display:flex;
+
+    margin-bottom:35px;
+
+}
+
+.connect input{
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    background:#ececec;
+
+    width:220px;
+
+}
+
+.connect button{
+
+    border:none;
+
+    background:#4a9b6b;
+
+    color:white;
+
+    padding:12px 18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.connect button:hover{
+
+    background:#7bbf91;
+
+}
+
+/*  SOCIAL  */
+
+.socials{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.socials a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#4a9b6b;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.4s;
+
+}
+
+.socials a:hover{
+
+    transform:translateY(-8px) rotate(360deg);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+/*  SCROLL  */
+
+.scroll{
+
+    display:inline-block;
+
+    margin-top:60px;
+
+    text-decoration:none;
+
+    color:#555;
+
+    animation:
+
+    bounce 2s infinite,
+
+    fadeOut 8s forwards;
+
+}
+
+/*  IMAGE  */
+
+.main-image{
+
+    position:relative;
+
+}
+
+.blob{
+
+    width:370px;
+
+    height:370px;
+
+    background:radial-gradient(
+
+        circle,
+
+        #e7d3b5 0%,
+
+        #e7d3b5 35%,
+
+        #519872 100%
+
+    );
+
+    border-radius:
+        60% 40% 55% 45% /
+        50% 60% 40% 50%;
+
+    position:absolute;
+
+    top:50%;
+
+    left:65%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:-1;
+
+    animation:morph 8s ease-in-out infinite;
+
+}
+
+.blob::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20px;
+
+    background:inherit;
+
+    border-radius:inherit;
+
+    filter:blur(25px);
+
+    opacity:.5;
+
+}
+
+.main-image img{
+
+    width:450px;
+
+    position:relative;
+
+    left:60px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/*  ABOUT  */
+
+.about{
+
+    width:80%;
+    margin:auto;
+    padding:120px 0;
+
+}
+
+.about-wrapper{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.about-content{
+
+    flex:1;
+
+}
+
+.about-content h2{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+}
+
+.about-content p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
+
+.about-stats{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.stat-card{
+
+    width:170px;
+
+    padding:30px 20px;
+
+    background:#E8DFED;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px #377d53;
+
+}
+
+.stat-card h3{
+
+    font-size:2rem;
+
+    color:#2f3640;
+
+    margin-bottom:8px;
+
+}
+
+.stat-card p{
+
+    color:#777;
+
+    font-size:.95rem;
+
+}
+
+/*  PLACEHOLDER SECTIONS  */
+
+section[id]{
+
+    scroll-margin-top:100px;
+
+}
+
+#education,
+#projects,
+#achievements,
+#hobbies,
+#publications,
+#contact{
+
+    width:80%;
+
+    margin:auto;
+
+    padding:120px 0;
+
+}
+
+#education h2,
+#projects h2,
+#achievements h2,
+#hobbies h2,
+#publications h2,
+#contact h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+}
+
+/* ANIMATIONS  */
+
+@keyframes textShift{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(10px);
+    }
+
+}
+
+@keyframes fadeOut{
+
+    0%,70%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        visibility:hidden;
+    }
+
+}
+
+@keyframes morph{
+
+    0%{
+
+        border-radius:
+        50% 40% 60% 30%;
+
+    }
+
+    50%{
+
+        border-radius:
+        35% 60% 40% 55%;
+
+    }
+
+    100%{
+
+        border-radius:
+        50% 40% 60% 30%;
+
+    }
+
+}
+

@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F4F0EB;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/*  NAVBAR  */
+
+nav{
+    padding:25px 5%;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-size:15.2px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#4a9b6b;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:3px;
+    background:#4a9b6b;
+    border-radius:5px;
+    transition:.3s;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    width:100%;
+}
+
+/* ACHIEVEMENTS  */
+
+.achievements{
+    width:80%;
+    margin:auto;
+    padding:60px 0 100px;
+}
+
+.heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+}
+
+.heading h1{
+    font-size:40px;
+    color:#2f3640;
+}
+
+/*  TROPHY  */
+
+.trophy{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#4a9b6b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:28px;
+    box-shadow:0 10px 25px rgba(74,155,107,.35);
+    animation:float 4s ease-in-out infinite;
+}
+
+/* GRID */
+
+.achievement-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/*  ACHIEVEMENT CARD  */
+
+.achievement-card{
+    background:#ececec;
+    border-radius:18px;
+    padding:28px 24px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.35s ease;
+    opacity:0;
+    animation:fadeUp .8s ease forwards;
+}
+
+.achievement-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:5px;
+    background:#4a9b6b;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:.35s;
+}
+
+.achievement-card:hover::before{
+    transform:scaleX(1);
+}
+
+.achievement-card:hover{
+    transform:translateY(-10px);
+    background:white;
+    box-shadow:0 18px 35px rgba(74,155,107,.25);
+}
+
+/*  ICON  */
+
+.icon{
+    width:70px;
+    height:70px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    background:#dff2e6;
+    color:#4a9b6b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    transition:.35s;
+}
+
+.achievement-card:hover .icon{
+    background:#4a9b6b;
+    color:white;
+    transform:rotate(12deg) scale(1.1);
+}
+
+/*  TEXT  */
+
+.achievement-card h3{
+    font-size:19.2px;
+    color:#2f3640;
+    margin-bottom:12px;
+}
+
+.achievement-card p{
+    color:#666;
+    line-height:1.7;
+    font-size:15.2px;
+    margin-bottom:20px;
+}
+
+/*  YEAR BADGE  */
+
+.achievement-card span{
+    display:inline-block;
+    background:#4a9b6b;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13.6px;
+    font-weight:500;
+    letter-spacing:.5px;
+}
+
+.achievement-card:nth-child(1){ animation-delay:.1s; }
+.achievement-card:nth-child(2){ animation-delay:.2s; }
+.achievement-card:nth-child(3){ animation-delay:.3s; }
+.achievement-card:nth-child(4){ animation-delay:.4s; }
+
+/*  FLOAT ANIMATION  */
+
+@keyframes float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+}
+
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(35px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+/*  RESPONSIVE  */
+
+@media(max-width:992px){
+    .achievements{ width:90%; }
+    .heading{ flex-direction:column; gap:20px; text-align:center; }
+}
+
+@media(max-width:768px){
+    nav ul{ gap:15px; }
+    .heading h1{ font-size:32px; }
+    .achievement-container{ grid-template-columns:1fr; }
+    .achievement-card{ padding:22px; }
+}
+
+@media(max-width:480px){
+    .heading h1{ font-size:28.8px; }
+    .trophy{ width:60px; height:60px; font-size:22px; }
+    .icon{ width:60px; height:60px; font-size:24px; }
+    .achievement-card h3{ font-size:16.8px; }
+    .achievement-card p{ font-size:14.4px; }
+}

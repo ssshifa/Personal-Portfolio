@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F4F0EB;
+    color:#333;
+    overflow-x:hidden;
+}
+
+/*  NAVBAR  */
+
+nav{
+    padding:25px 5%;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    font-size:15.2px;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#4a9b6b;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:3px;
+    background:#4a9b6b;
+    border-radius:5px;
+    transition:.3s;
+}
+
+nav a:hover::after,
+nav a.active::after{
+    width:100%;
+}
+
+/* FLOAT ANIMATION */
+
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-12px); }
+    100%{ transform:translateY(0); }
+}
+
+.graduate{
+    animation:float 3s ease-in-out infinite;
+}
+
+/*  EDUCATION  */
+
+.education{
+    width:80%;
+    margin:auto;
+    padding:70px 0 100px;
+}
+
+/*  TITLE  */
+
+.heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+}
+
+.heading h1{
+    font-size:40px;
+    color:#2d2d2d;
+}
+
+.graduate{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#4a9b6b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:28px;
+    box-shadow:0 10px 25px rgba(74,155,107,.35);
+    animation:float 4s ease-in-out infinite;
+}
+
+/*  TIMELINE  */
+
+.timeline{
+    position:relative;
+}
+
+.edu-box{
+    display:flex;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+/*  LOGO  */
+
+.logo{
+    width:90px;
+    display:flex;
+    justify-content:center;
+}
+
+.logo img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:white;
+    padding:8px;
+    box-shadow:0 5px 18px rgba(0,0,0,.15);
+    transition:.35s;
+}
+
+.logo img:hover{
+    transform:scale(1.08) rotate(5deg);
+}
+
+/*  TIMELINE  */
+
+.middle{
+    width:60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.dot{
+    width:18px;
+    height:18px;
+    background:#4a9b6b;
+    border-radius:50%;
+    border:4px solid #d7efe1;
+    z-index:2;
+    box-shadow:0 0 12px rgba(74,155,107,.4);
+}
+
+.line{
+    width:4px;
+    height:130px;
+    background:#8bc9a2;
+    margin-top:5px;
+    border-radius:10px;
+}
+
+/* CARD  */
+
+.card{
+    flex:1;
+    background:#ececec;
+    padding:22px 28px;
+    border-radius:15px;
+    transition:.35s;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.card h3{
+    font-size:18.4px;
+    color:#2d2d2d;
+    margin-bottom:8px;
+}
+
+.card h4{
+    font-size:15.68px;
+    color:#4a9b6b;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.card p{
+    color:#777;
+    font-size:14.72px;
+}
+
+.card:hover{
+    transform:translateX(10px);
+    box-shadow:0 12px 28px rgba(74,155,107,.25);
+    background:white;
+}
+
+/*  LEFT BORDER */
+
+.card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:6px;
+    height:100%;
+    background:#4a9b6b;
+    border-radius:15px 0 0 15px;
+    transform:scaleY(0);
+    transition:.35s;
+    transform-origin:top;
+}
+
+.card:hover::before{
+    transform:scaleY(1);
+}
+
+/* LAST ITEM  */
+
+.edu-box:last-child .line{
+    display:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+    .education{ width:90%; }
+    .heading{ flex-direction:column; gap:20px; text-align:center; }
+}
+
+@media(max-width:768px){
+    nav ul{ gap:15px; }
+    .heading h1{ font-size:32px; }
+    .logo{ width:70px; }
+    .logo img{ width:55px; height:55px; }
+    .card{ padding:18px 20px; }
+}
+
+@media(max-width:480px){
+    .heading h1{ font-size:28.8px; }
+    .graduate{ width:60px; height:60px; font-size:22px; }
+    .edu-box{ align-items:flex-start; }
+    .logo{ width:50px; }
+    .logo img{ width:42px; height:42px; padding:6px; }
+    .middle{ width:40px; }
+    .dot{ width:14px; height:14px; border-width:3px; }
+    .line{ width:3px; }
+    .card{ padding:16px 18px; }
+    .card h3{ font-size:16.8px; }
+    .card h4{ font-size:14.4px; }
+    .card p{ font-size:13.6px; }
+}
