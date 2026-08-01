@@ -115,9 +115,14 @@ nav a.active::after{
     margin-bottom:25px;
 }
 
-/*  BUTTON  */
+/* BUTTON */
 
 .cv-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
     border:none;
     background:#4a9b6b;
     color:white;
@@ -131,6 +136,7 @@ nav a.active::after{
     transition:.3s;
 
     margin-bottom:30px;
+
 }
 
 .cv-btn:hover{
@@ -536,6 +542,7 @@ section[id]{
 }
 
 /* Responsive */
+/* ================= Mobile Responsive ================= */
 
 @media screen and (max-width:768px){
 
@@ -625,4 +632,5 @@ section[id]{
     }
 
 }
+
 
